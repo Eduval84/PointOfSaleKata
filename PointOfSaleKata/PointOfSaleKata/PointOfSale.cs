@@ -12,7 +12,7 @@ public class PointOfSale
     public static double GetPriceForBarcode(string barcode)
     { 
         double barcodeprice;
-
+        if (string.IsNullOrEmpty(barcode) ) throw new Exception("Error: empty barcode");
         if (!prices.TryGetValue(barcode, out barcodeprice))
             throw new Exception("Error: barcode not found");
         return barcodeprice;
