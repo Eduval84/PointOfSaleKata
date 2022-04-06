@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PointOfSaleKata;
 
@@ -14,6 +15,7 @@ public class PointOfSale
         double barcodeprice;
 
         if (string.IsNullOrEmpty(barcode) ) throw new Exception("Error: empty barcode");
+        if (barcode == "Total") return prices.Sum(p => p.Value);
         if (!prices.TryGetValue(barcode, out barcodeprice))
             throw new Exception("Error: barcode not found");
         return barcodeprice;
