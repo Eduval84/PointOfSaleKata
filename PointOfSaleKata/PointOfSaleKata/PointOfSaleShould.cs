@@ -36,16 +36,4 @@ namespace PointOfSaleKata
             Assert.Equal("Error: barcode not found",exception.Message);
             }
     }
-
-    public class PointOfSale
-    {
-        public static double GetPriceForBarcode(string barcode)
-        {
-            if (barcode == "99999")
-                throw new Exception("Error: barcode not found");
-            if (barcode == "23456")
-                return 12.50;
-            return 7.25;
-        }
-    }
 }
