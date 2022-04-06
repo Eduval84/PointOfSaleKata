@@ -32,6 +32,8 @@ namespace PointOfSaleKata
     {
         public static double GetPriceForBarcode(string barcode)
         {
+            if (barcode == "23456")
+                return 12.50;
             return 7.25;
         }
     }
