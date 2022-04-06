@@ -44,5 +44,16 @@ namespace PointOfSaleKata
             var exception = Assert.Throws<Exception>(() => PointOfSale.GetPriceForBarcode(barcode));
             Assert.Equal("Error: empty barcode", exception.Message);
         }
+        
+        [Fact]
+        public void Total_command_return_the_sum_of_all_values()
+        {
+            string command = "Total";
+            double expectedPrice = 19.75;
+
+            double result = PointOfSale.GetPriceForBarcode(command);
+
+            Assert.Equal(expectedPrice, result);
+        }
     }
 }
